@@ -19,7 +19,7 @@
 
 ```
 monitor:
-    port: 12345         # default port to communicate with via RPyC. 
+    port: 8181         # default port to communicate with via RPyC. 
 
 influxdb: 
     ip: '10.0.0.22'		# change ip to match your open-nti host-ip 
