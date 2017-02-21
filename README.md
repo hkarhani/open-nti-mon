@@ -39,10 +39,7 @@ This file is implicitely loaded while running the server-side of open-nti-monito
 
 ### Second: Create or edit measurements files:
 ``` 
-<measurement_name>
-	<settings> 			#as explained below. 
-
-Example: 
+Sample: 
 
 -------------- single measurement definition -------------------
 cpu_idle: 						          # measurement identification - should be unique! 
