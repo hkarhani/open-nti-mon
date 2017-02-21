@@ -1,0 +1,15 @@
+monitor:
+    port: 8181
+
+temp: 
+    folder: /tmp/
+
+influxdb: 
+    ip: '10.0.0.22'
+    port: 8086 
+    user: 'juniper' 
+    password: 'juniper'
+    db: 'juniper' 
+
+# Add your slack-botID in the following 
+# slack: xoxb-XXXXXXXXXXX-XXXXXXXXXXXXXXXXX

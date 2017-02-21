@@ -1,0 +1,39 @@
+cpu_idle: 
+    measurement: 'cpu-idle'     # measurement as /.*measurement.*/
+    timeInterval: '1h'          # last 1h 
+    monitor: 
+      - min(value)              # what to select 
+      - mean(value)
+    test: 
+      - min: 'lt 20'
+        message: 'cpu-idle during the last 1h reached less than 20%!' 
+      - mean: 'lt 40'
+        message: 'cpu-idle average over the last 1h is less than 40%!'
+    rp: 
+      hold: 30               # in minutes - don't take action as long as event 
+                             # is sent during hold period for that specific "measurement" 
+                             # i.e. per device / measurement / monitored value  
+    action:       
+      - salt: 
+           enable: true      # Mandatory! either true or false if action name exists 
+           tagPrefix: /jnpr/opennti/cpu_idle    # device name will be passed in event data  
+
+      - slack:
+           enable: true 
+           channel: '#automation' 
+
+fabric_discard: 
+    measurement: 'fabric-discard'     
+    timeInterval: '15m'              
+    monitor: 
+      - max(value)               
+    test: 
+      - max: 'gt 10'
+        message: 'fabric-discards have been witnessed!' 
+    rp: 
+      hold: 5      # minutes by default 
+
+    action:       
+      - salt: 
+           enable: true       
+           tagPrefix: /jnpr/opennti/fabric_discard
