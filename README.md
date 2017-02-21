@@ -8,9 +8,12 @@
 
  Once you deployed docker-saltstack-junos (https://github.com/Juniper/docker-saltstack-junos), login to master shell via: 
 
+```
 > make master-shell 
 > cd ~
-> git clone https://github.com/hkarhani/open-nti-mon.git & cd open-nti-mon/
+> git clone https://github.com/hkarhani/open-nti-mon.git 
+> cd open-nti-mon/
+```
 
 ### 1. First edit settings.yaml file: 
 
